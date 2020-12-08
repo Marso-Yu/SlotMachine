@@ -13,6 +13,7 @@
 		A173C27E257FADF600B675B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A173C27C257FADF600B675B4 /* Main.storyboard */; };
 		A173C280257FADF900B675B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A173C27F257FADF900B675B4 /* Assets.xcassets */; };
 		A173C283257FADF900B675B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A173C281257FADF900B675B4 /* LaunchScreen.storyboard */; };
+		A173C28D257FDED600B675B4 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = A173C28C257FDED500B675B4 /* MyParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A173C27F257FADF900B675B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A173C282257FADF900B675B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A173C284257FADF900B675B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A173C28C257FDED500B675B4 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A173C276257FADF600B675B4 /* AppDelegate.swift */,
 				A173C278257FADF600B675B4 /* SceneDelegate.swift */,
 				A173C27A257FADF600B675B4 /* ViewController.swift */,
+				A173C28C257FDED500B675B4 /* MyParticle.sks */,
 				A173C27C257FADF600B675B4 /* Main.storyboard */,
 				A173C27F257FADF900B675B4 /* Assets.xcassets */,
 				A173C281257FADF900B675B4 /* LaunchScreen.storyboard */,
@@ -127,6 +130,7 @@
 				A173C283257FADF900B675B4 /* LaunchScreen.storyboard in Resources */,
 				A173C280257FADF900B675B4 /* Assets.xcassets in Resources */,
 				A173C27E257FADF600B675B4 /* Main.storyboard in Resources */,
+				A173C28D257FDED600B675B4 /* MyParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
