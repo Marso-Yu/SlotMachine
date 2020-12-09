@@ -18,8 +18,16 @@ class ViewController: UIViewController {
     var timer4: Timer?
     var timer5: Timer?
     var timer6: Timer?
-    var score:Int = 9
+    var score:Int = 10
+    var records = [Record]()
     @IBOutlet weak var playButton: UIButton!
+    
+    @IBSegueAction func showResult(_ coder: NSCoder) -> ResultTableViewController? {
+        let controller = ResultTableViewController(coder: coder)
+        controller?.results = records
+        return controller
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         for slotImage in showSlotImages{
@@ -36,7 +44,12 @@ class ViewController: UIViewController {
            skView.presentScene(scene)
         scoreLabel.text = String(score)
         scoreLabel.textAlignment = .center
-        scoreLabel.backgroundColor = .black
+        scoreLabel.textColor = .red
+        scoreLabel.backgroundColor = .yellow
+        scoreLabel.layer.masksToBounds = true
+        scoreLabel.layer.cornerRadius = 20
+        
+
         // Do any additional setup after loading the view.
     }
 
@@ -53,16 +66,19 @@ class ViewController: UIViewController {
         
         if score < 10 {
             print("test")
-            let actionSheetAlert = UIAlertController(title: "代幣不足", message: "阿姨走到你面前，該對阿姨說什麼？", preferredStyle: .actionSheet)
-            let auntAction = UIAlertAction(title: "阿姨 我不想努力了", style: .default) { (UIAlertAction) in
+            let actionSheetAlert = UIAlertController(title: "資金不足", message: "阿姨走到你面前，該對阿姨說什麼？", preferredStyle: .actionSheet)
+            let auntAction = UIAlertAction(title: "💁🏻‍♂️ 阿姨 我不想努力了", style: .default) { (UIAlertAction) in
                 self.score += 100
                 self.scoreLabel.text = String(self.score)
+                self.records.append(Record(result: "😘 阿姨資助 100", remainder: String(self.score)))
             }
-            //let cancelAction = UIAlertAction(title: "阿姨 掰掰", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "🤷🏻‍♂️ 阿姨 掰掰", style: .cancel, handler: nil)
             actionSheetAlert.addAction(auntAction)
-            //actionSheetAlert.addAction(cancelAction)
+            actionSheetAlert.addAction(cancelAction)
             self.present(actionSheetAlert, animated: true, completion: nil)
+            self.playButton.isEnabled = true
         }
+        
         else{
             timer4?.invalidate()
             timer5?.invalidate()
@@ -74,7 +90,7 @@ class ViewController: UIViewController {
             scoreLabel.text = String(score)
             
             timer1 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (Timer) in
-                picture1RandomNumber = Int.random(in: 3...3)
+                picture1RandomNumber = Int.random(in: 1...3)
                         UIImageView.transition(with: self.showSlotImages[0], duration: 0.1, options: .transitionFlipFromTop, animations: {
                             if let picture1RandomNumber = picture1RandomNumber{
                                 self.showSlotImages[0].image = UIImage(named: "picture\(picture1RandomNumber)")
@@ -83,7 +99,7 @@ class ViewController: UIViewController {
                 })
             
             timer2 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (Timer) in
-                picture2RandomNumber = Int.random(in: 3...3)
+                picture2RandomNumber = Int.random(in: 1...3)
                         UIImageView.transition(with: self.showSlotImages[1], duration: 0.1, options: .transitionFlipFromTop, animations: {
                             if let picture2RandomNumber = picture2RandomNumber{
                                 self.showSlotImages[1].image = UIImage(named: "picture\(picture2RandomNumber)")
@@ -93,7 +109,7 @@ class ViewController: UIViewController {
 
             
             timer3 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (Timer) in
-                picture3RandomNumber = Int.random(in: 3...3)
+                picture3RandomNumber = Int.random(in: 1...3)
                         UIImageView.transition(with: self.showSlotImages[2], duration: 0.1, options: .transitionFlipFromTop, animations: {
                             if let picture3RandomNumber = picture3RandomNumber{
                                 self.showSlotImages[2].image = UIImage(named: "picture\(picture3RandomNumber)")
@@ -127,6 +143,7 @@ class ViewController: UIViewController {
                             alerController.addAction(okAction)
                             //alerController.addAction(byeAction)
                             self.present(alerController, animated: true, completion: nil)
+                            self.records.append(Record(result: "恭喜中獎 🍌 20", remainder: String(self.score)))
                         
                         case 2:
                             self.score += 50
@@ -134,13 +151,15 @@ class ViewController: UIViewController {
                             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                             alerController.addAction(okAction)
                             self.present(alerController, animated: true, completion: nil)
+                            self.records.append(Record(result: "恭喜中獎 🍒 50", remainder: String(self.score)))
                             
                         case 3:
-                            self.score += 100000
+                            self.score += 100
                             let alerController = UIAlertController(title: "恭喜中大獎", message: "💰💰💰 ＋ 100", preferredStyle: .alert)
                             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                             alerController.addAction(okAction)
                             self.present(alerController, animated: true, completion: nil)
+                            self.records.append(Record(result: "恭喜中大獎 💰💰💰 100", remainder: String(self.score)))
                         default:
                             break
                         }
@@ -149,8 +168,14 @@ class ViewController: UIViewController {
                     }
                     
                 }
+                else{
+                    self.records.append(Record(result: "未中獎 😭😭😭", remainder: String(self.score)))
+                }
                 self.playButton.isEnabled = true
             })
         }
+         
     }
+
 }
+
