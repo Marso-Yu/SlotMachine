@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,39 +17,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Aro-yg-4xk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GodOfWealth" translatesAutoresizingMaskIntoConstraints="NO" id="rzj-p1-xSr">
+                                <rect key="frame" x="-9" y="0.0" width="424" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aro-yg-4xk">
                                 <rect key="frame" x="10" y="193" width="394" height="128"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HMn-59-qce">
-                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="128"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HMn-59-qce">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="128"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tz-et-eyS">
-                                        <rect key="frame" x="131.5" y="0.0" width="131" height="128"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tz-et-eyS">
+                                        <rect key="frame" x="134.5" y="0.0" width="125" height="128"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOT-aH-mnu">
-                                        <rect key="frame" x="262.5" y="0.0" width="131.5" height="128"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOT-aH-mnu">
+                                        <rect key="frame" x="269.5" y="0.0" width="124.5" height="128"/>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="394" id="Itr-V3-0rU"/>
+                                    <constraint firstAttribute="height" constant="128" id="NvX-XG-gM7"/>
+                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60G-g3-kv1">
-                                <rect key="frame" x="184" y="570" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60G-g3-kv1">
+                                <rect key="frame" x="80" y="386" width="254" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="G0R-bi-DAc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJv-Po-MP7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zfh-pN-cMF">
+                                <rect key="frame" x="160" y="656" width="94" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="60G-g3-kv1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="14A-DG-E0f"/>
                             <constraint firstAttribute="trailing" secondItem="Aro-yg-4xk" secondAttribute="trailing" constant="10" id="8zO-gr-jHT"/>
                             <constraint firstItem="Aro-yg-4xk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="149" id="9hT-2T-p08"/>
+                            <constraint firstAttribute="bottom" secondItem="rzj-p1-xSr" secondAttribute="bottom" id="AaP-EC-QBv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="60G-g3-kv1" secondAttribute="trailing" constant="80" id="GMe-Tg-dzC"/>
+                            <constraint firstItem="zfh-pN-cMF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="160" id="KEr-Na-a6U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zfh-pN-cMF" secondAttribute="trailing" constant="160" id="KhK-YU-Dx3"/>
+                            <constraint firstItem="zfh-pN-cMF" firstAttribute="top" secondItem="60G-g3-kv1" secondAttribute="bottom" constant="20" id="Rlb-Zf-cXz"/>
+                            <constraint firstItem="60G-g3-kv1" firstAttribute="top" secondItem="Aro-yg-4xk" secondAttribute="bottom" constant="65" id="cWS-PH-uHo"/>
+                            <constraint firstAttribute="trailing" secondItem="rzj-p1-xSr" secondAttribute="trailing" constant="-1" id="hGn-pY-WA4"/>
+                            <constraint firstItem="rzj-p1-xSr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hr7-Vq-TCk"/>
+                            <constraint firstItem="rzj-p1-xSr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-9" id="wQf-Gc-BBq"/>
                             <constraint firstItem="Aro-yg-4xk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="zRR-ZU-IQr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="60G-g3-kv1" id="fCp-k8-oe9"/>
+                        <outlet property="scoreLabel" destination="zfh-pN-cMF" id="FL0-eF-hTz"/>
+                        <outlet property="showGodOfWealth" destination="rzj-p1-xSr" id="h27-Dv-fXg"/>
                         <outletCollection property="showSlotImages" destination="HMn-59-qce" collectionClass="NSMutableArray" id="deH-Dp-eK5"/>
                         <outletCollection property="showSlotImages" destination="4tz-et-eyS" collectionClass="NSMutableArray" id="8UP-cj-ary"/>
                         <outletCollection property="showSlotImages" destination="LOT-aH-mnu" collectionClass="NSMutableArray" id="Ba6-Aw-n5D"/>
@@ -56,10 +87,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="64"/>
+            <point key="canvasLocation" x="137.68115942028987" y="63.616071428571423"/>
         </scene>
     </scenes>
     <resources>
+        <image name="GodOfWealth" width="310" height="479"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
