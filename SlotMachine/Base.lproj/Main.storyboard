@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GodOfWealth" translatesAutoresizingMaskIntoConstraints="NO" id="rzj-p1-xSr">
-                                <rect key="frame" x="-9" y="10" width="424" height="896"/>
+                                <rect key="frame" x="-9" y="83" width="424" height="823"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aro-yg-4xk">
                                 <rect key="frame" x="10" y="237" width="394" height="128"/>
@@ -85,7 +85,7 @@
                             <constraint firstItem="rwF-Ay-kEO" firstAttribute="leading" secondItem="zfh-pN-cMF" secondAttribute="trailing" constant="38" id="Vl3-Lc-8EL"/>
                             <constraint firstItem="60G-g3-kv1" firstAttribute="top" secondItem="Aro-yg-4xk" secondAttribute="bottom" constant="65" id="cWS-PH-uHo"/>
                             <constraint firstAttribute="trailing" secondItem="rzj-p1-xSr" secondAttribute="trailing" constant="-1" id="hGn-pY-WA4"/>
-                            <constraint firstItem="rzj-p1-xSr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="hr7-Vq-TCk"/>
+                            <constraint firstItem="rzj-p1-xSr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="83" id="hr7-Vq-TCk"/>
                             <constraint firstItem="zfh-pN-cMF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="160" id="i0K-1r-7xj"/>
                             <constraint firstItem="rzj-p1-xSr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-9" id="wQf-Gc-BBq"/>
                             <constraint firstItem="Aro-yg-4xk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="zRR-ZU-IQr"/>
