@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var timer4: Timer?
     var timer5: Timer?
     var timer6: Timer?
-    var score:Int = 10
+    var score:Int = 30
     var records = [Record]()
     @IBOutlet weak var playButton: UIButton!
     
@@ -30,24 +30,32 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         for slotImage in showSlotImages{
             slotImage.layer.borderWidth = 5
         }
+        
+        //SpriteKit
         let skView = SKView(frame: showGodOfWealth.frame)
         skView.backgroundColor = .clear
         showGodOfWealth.insertSubview(skView, at: 0)
-           let scene = SKScene(size: skView.frame.size)
-           scene.anchorPoint = CGPoint(x: 0.5, y: 1)
+        let scene = SKScene(size: skView.frame.size)
+        scene.anchorPoint = CGPoint(x: 0.5, y: 1)
         scene.backgroundColor = .clear
-           let emitterNode = SKEmitterNode(fileNamed: "MyParticle")
-           scene.addChild(emitterNode!)
-           skView.presentScene(scene)
+        let emitterNode = SKEmitterNode(fileNamed: "MyParticle")
+        scene.addChild(emitterNode!)
+        skView.presentScene(scene)
+        
         scoreLabel.text = String(score)
         scoreLabel.textAlignment = .center
         scoreLabel.textColor = .red
         scoreLabel.backgroundColor = .yellow
         scoreLabel.layer.masksToBounds = true
         scoreLabel.layer.cornerRadius = 20
+        scoreLabel.layer.borderWidth = 3
+        
+        self.navigationItem.title = "財源滾滾"
+        self.navigationItem.backButtonTitle = "返回"
         
 
         // Do any additional setup after loading the view.
@@ -70,7 +78,7 @@ class ViewController: UIViewController {
             let auntAction = UIAlertAction(title: "💁🏻‍♂️ 阿姨 我不想努力了", style: .default) { (UIAlertAction) in
                 self.score += 100
                 self.scoreLabel.text = String(self.score)
-                self.records.append(Record(result: "😘 阿姨資助 100", remainder: String(self.score)))
+                self.records.append(Record(result: "阿姨資助 😘 100", remainder: String(self.score)))
             }
             let cancelAction = UIAlertAction(title: "🤷🏻‍♂️ 阿姨 掰掰", style: .cancel, handler: nil)
             actionSheetAlert.addAction(auntAction)

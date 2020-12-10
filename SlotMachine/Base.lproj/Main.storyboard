@@ -65,7 +65,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" systemColor="systemBlueColor"/>
-                                <state key="normal" image="note"/>
+                                <state key="normal" image="note 2 2"/>
                                 <connections>
                                     <segue destination="2nr-Td-1E9" kind="show" destinationCreationSelector="showResult:" id="wbs-qU-HNf"/>
                                 </connections>
@@ -93,6 +93,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Qg0-ce-YQy"/>
                     <connections>
+                        <outlet property="navigationItem" destination="Qg0-ce-YQy" id="Onr-uP-Gbc"/>
                         <outlet property="playButton" destination="60G-g3-kv1" id="fCp-k8-oe9"/>
                         <outlet property="scoreLabel" destination="zfh-pN-cMF" id="FL0-eF-hTz"/>
                         <outlet property="showGodOfWealth" destination="rzj-p1-xSr" id="h27-Dv-fXg"/>
@@ -105,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="63.616071428571423"/>
         </scene>
-        <!--Result Table View Controller-->
+        <!--操作紀錄-->
         <scene sceneID="BlZ-Yz-Tcx">
             <objects>
                 <tableViewController id="2nr-Td-1E9" customClass="ResultTableViewController" customModule="SlotMachine" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,7 +138,7 @@
                             <outlet property="delegate" destination="2nr-Td-1E9" id="hPz-bn-Ex5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vOb-vG-zAG"/>
+                    <navigationItem key="navigationItem" title="操作紀錄" id="vOb-vG-zAG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2we-ne-7rM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,7 +165,7 @@
     </scenes>
     <resources>
         <image name="GodOfWealth" width="310" height="479"/>
-        <image name="note" width="225" height="225"/>
+        <image name="note 2 2" width="157" height="147"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
