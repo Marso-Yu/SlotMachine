@@ -7,7 +7,7 @@
 
 import UIKit
 import SpriteKit
-
+import AVFoundation
 class ViewController: UIViewController {
     @IBOutlet var showSlotImages: [UIImageView]!
     @IBOutlet weak var showGodOfWealth: UIImageView!
@@ -18,9 +18,13 @@ class ViewController: UIViewController {
     var timer4: Timer?
     var timer5: Timer?
     var timer6: Timer?
+    var timer7: Timer?
     var score:Int = 30
     var records = [Record]()
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var noteButtion: UIButton!
+    var backgroundMusic = BackgroundMusic()
+
     
     @IBSegueAction func showResult(_ coder: NSCoder) -> ResultTableViewController? {
         let controller = ResultTableViewController(coder: coder)
@@ -36,7 +40,7 @@ class ViewController: UIViewController {
         }
         
         //SpriteKit
-        let skView = SKView(frame: showGodOfWealth.frame)
+        let skView = SKView(frame: view.frame)
         skView.backgroundColor = .clear
         showGodOfWealth.insertSubview(skView, at: 0)
         let scene = SKScene(size: skView.frame.size)
@@ -56,12 +60,12 @@ class ViewController: UIViewController {
         
         self.navigationItem.title = "財源滾滾"
         self.navigationItem.backButtonTitle = "返回"
-        
 
         // Do any additional setup after loading the view.
+        backgroundMusic.loopPlay(fileName: "Muzik", fileExtension: "mp3")
     }
 
-    @IBAction func play(_ sender: Any) {
+    @IBAction func playGame(_ sender: Any) {
 //        timer1 = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (Timer) in
 //                for slotImage in self.showSlotImages{
 //                let pictureNumber = Int.random(in: 1...3)
@@ -71,26 +75,35 @@ class ViewController: UIViewController {
 //                }
 //            })
         playButton.isEnabled = false
-        
+        noteButtion.isEnabled = false
         if score < 10 {
-            print("test")
+            timer7?.invalidate()
             let actionSheetAlert = UIAlertController(title: "資金不足", message: "阿姨走到你面前，該對阿姨說什麼？", preferredStyle: .actionSheet)
+            backgroundMusic.speak(sentence: "資金不足，阿姨走到你面前，該對阿姨說什麼")
             let auntAction = UIAlertAction(title: "💁🏻‍♂️ 阿姨 我不想努力了", style: .default) { (UIAlertAction) in
                 self.score += 100
                 self.scoreLabel.text = String(self.score)
                 self.records.append(Record(result: "阿姨資助 😘 100", remainder: String(self.score)))
+                self.backgroundMusic.play(fileName: "Correct", fileExtension: "mp3")
             }
-            let cancelAction = UIAlertAction(title: "🤷🏻‍♂️ 阿姨 掰掰", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "🤷🏻‍♂️ 阿姨 掰掰", style: .cancel, handler: { (UIAlertAction) in
+                self.backgroundMusic.play(fileName: "Error", fileExtension: "mp3")
+            })
             actionSheetAlert.addAction(auntAction)
             actionSheetAlert.addAction(cancelAction)
             self.present(actionSheetAlert, animated: true, completion: nil)
-            self.playButton.isEnabled = true
+            
+            timer7 = Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (Timer) in
+                self.playButton.isEnabled = true
+                self.noteButtion.isEnabled = true
+            })
         }
         
         else{
             timer4?.invalidate()
             timer5?.invalidate()
             timer6?.invalidate()
+            timer7?.invalidate()
             var picture1RandomNumber: Int?
             var picture2RandomNumber: Int?
             var picture3RandomNumber: Int?
@@ -128,18 +141,22 @@ class ViewController: UIViewController {
 
             timer4 = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (Timer) in
                 self.timer1?.invalidate()
+                self.backgroundMusic.play(fileName: "InPlace", fileExtension: "mp3")
             })
             
             timer5 = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (Timer) in
                 self.timer2?.invalidate()
+                self.backgroundMusic.play(fileName: "InPlace", fileExtension: "mp3")
             })
             
             timer6 = Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (Timer) in
                 self.timer3?.invalidate()
+                self.backgroundMusic.play(fileName: "InPlace", fileExtension: "mp3")
                 if picture1RandomNumber == picture2RandomNumber, picture2RandomNumber == picture3RandomNumber
                 {
                     if let picture3RandomNumber = picture3RandomNumber
                     {
+                        self.backgroundMusic.play(fileName: "Aleluya", fileExtension: "mp3")
                         switch picture3RandomNumber {
                         case 1:
                             self.score += 20
@@ -178,8 +195,13 @@ class ViewController: UIViewController {
                 }
                 else{
                     self.records.append(Record(result: "未中獎 😭😭😭", remainder: String(self.score)))
+                    self.backgroundMusic.play(fileName: "Loser", fileExtension: "mp3")
                 }
+            })
+            
+            timer7 = Timer.scheduledTimer(withTimeInterval: 8.0, repeats: false, block: { (Timer) in
                 self.playButton.isEnabled = true
+                self.noteButtion.isEnabled = true
             })
         }
          

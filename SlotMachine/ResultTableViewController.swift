@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 class ResultTableViewController: UITableViewController {
     var results = [Record]()
     
@@ -15,7 +15,6 @@ class ResultTableViewController: UITableViewController {
         //print(results)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     }
 

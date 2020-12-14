@@ -48,7 +48,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJv-Po-MP7"/>
+                                    <action selector="playGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJv-Po-MP7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zfh-pN-cMF">
@@ -94,6 +94,7 @@
                     <navigationItem key="navigationItem" id="Qg0-ce-YQy"/>
                     <connections>
                         <outlet property="navigationItem" destination="Qg0-ce-YQy" id="Onr-uP-Gbc"/>
+                        <outlet property="noteButtion" destination="rwF-Ay-kEO" id="Xq9-sO-ef8"/>
                         <outlet property="playButton" destination="60G-g3-kv1" id="fCp-k8-oe9"/>
                         <outlet property="scoreLabel" destination="zfh-pN-cMF" id="FL0-eF-hTz"/>
                         <outlet property="showGodOfWealth" destination="rzj-p1-xSr" id="h27-Dv-fXg"/>
