@@ -11,7 +11,6 @@
 		A12F7E722581223E0007C427 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F7E712581223E0007C427 /* ResultTableViewController.swift */; };
 		A13B1F83258657D300E7A994 /* BackgroundMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B1F82258657D300E7A994 /* BackgroundMusic.swift */; };
 		A13B1FAC2587182200E7A994 /* Muzik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A13B1FAB2587182200E7A994 /* Muzik.mp3 */; };
-		A13B1FB725871CDD00E7A994 /* InPlace.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A13B1FB625871CDD00E7A994 /* InPlace.mp3 */; };
 		A13B1FBB25871FC300E7A994 /* Loser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A13B1FBA25871FC300E7A994 /* Loser.mp3 */; };
 		A13B1FBF25872D9600E7A994 /* Error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A13B1FBD25872D9600E7A994 /* Error.mp3 */; };
 		A13B1FC025872D9600E7A994 /* Correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A13B1FBE25872D9600E7A994 /* Correct.mp3 */; };
@@ -23,6 +22,7 @@
 		A173C280257FADF900B675B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A173C27F257FADF900B675B4 /* Assets.xcassets */; };
 		A173C283257FADF900B675B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A173C281257FADF900B675B4 /* LaunchScreen.storyboard */; };
 		A173C28D257FDED600B675B4 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = A173C28C257FDED500B675B4 /* MyParticle.sks */; };
+		A1767C7725C1C9F4001AAD40 /* InPlace.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1767C7625C1C9F4001AAD40 /* InPlace.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,6 @@
 		A12F7E712581223E0007C427 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
 		A13B1F82258657D300E7A994 /* BackgroundMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusic.swift; sourceTree = "<group>"; };
 		A13B1FAB2587182200E7A994 /* Muzik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Muzik.mp3; sourceTree = "<group>"; };
-		A13B1FB625871CDD00E7A994 /* InPlace.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = InPlace.mp3; path = ../../../../InPlace.mp3; sourceTree = "<group>"; };
 		A13B1FBA25871FC300E7A994 /* Loser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Loser.mp3; sourceTree = "<group>"; };
 		A13B1FBD25872D9600E7A994 /* Error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Error.mp3; sourceTree = "<group>"; };
 		A13B1FBE25872D9600E7A994 /* Correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Correct.mp3; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		A173C282257FADF900B675B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A173C284257FADF900B675B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A173C28C257FDED500B675B4 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		A1767C7625C1C9F4001AAD40 /* InPlace.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = InPlace.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 				A173C28C257FDED500B675B4 /* MyParticle.sks */,
 				A173C27C257FADF600B675B4 /* Main.storyboard */,
 				A173C27F257FADF900B675B4 /* Assets.xcassets */,
-				A13B1FB625871CDD00E7A994 /* InPlace.mp3 */,
+				A1767C7625C1C9F4001AAD40 /* InPlace.mp3 */,
 				A13B1FAB2587182200E7A994 /* Muzik.mp3 */,
 				A13B1FBA25871FC300E7A994 /* Loser.mp3 */,
 				A13B1FC225872E2600E7A994 /* Aleluya.mp3 */,
@@ -155,9 +155,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A173C283257FADF900B675B4 /* LaunchScreen.storyboard in Resources */,
+				A1767C7725C1C9F4001AAD40 /* InPlace.mp3 in Resources */,
 				A13B1FBF25872D9600E7A994 /* Error.mp3 in Resources */,
 				A13B1FBB25871FC300E7A994 /* Loser.mp3 in Resources */,
-				A13B1FB725871CDD00E7A994 /* InPlace.mp3 in Resources */,
 				A13B1FC025872D9600E7A994 /* Correct.mp3 in Resources */,
 				A13B1FAC2587182200E7A994 /* Muzik.mp3 in Resources */,
 				A13B1FC325872E2600E7A994 /* Aleluya.mp3 in Resources */,
